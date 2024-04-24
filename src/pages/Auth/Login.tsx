@@ -17,13 +17,20 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/components/ui/tabs"
-import { Switch } from "@/components/ui/switch"
-
+import { useDispatch } from "react-redux";
+import { fetchUser } from "@/store/Slice/userSlice"
 export function Login() {
-  const [isDoc, setisDoc] = useState<boolean>(false);
+  const dispatch = useDispatch();
   const [username, setusername] = useState("");
   const [password, setpassword] = useState("");
+  const [confpassword, setconfpassword] = useState("");
   const handleLogin = async () => {
+    username && password ?
+    dispatch(fetchUser({username, password, type: "login"}) as any) : null 
+  }
+  const handleReg = async () => {
+    username && password ?
+    dispatch(fetchUser({username, password, type: "reg"}) as any) : null 
   }
 
   return (
@@ -63,7 +70,7 @@ export function Login() {
             </div>
           </CardContent>
           <CardFooter className="flex justify-between">
-            <Button>Login</Button>
+            <Button onClick={handleLogin}>Login</Button>
           </CardFooter>
         </Card>
       </TabsContent>
@@ -79,6 +86,8 @@ export function Login() {
             <div className="space-y-1">
               <Label htmlFor="current">Email</Label>
               <Input 
+              value={username}
+              onChange={(e) => setusername(e.target.value)}
               id="current" 
               type="email"
               required
@@ -88,6 +97,8 @@ export function Login() {
               <Label htmlFor="new">Password</Label>
               <Input
                 id="new"
+                value={password}
+                onChange={(e) => setpassword(e.target.value)}
                 type="password"
                 placeholder="Enter the Password"
                 />
@@ -95,14 +106,16 @@ export function Login() {
             <div className="space-y-1">
               <Label htmlFor="new">Confirm Password</Label>
               <Input
-                id="new"
+                id="new asdf"
+                value={confpassword}
+                onChange={(e) => setconfpassword(e.target.value)}
                 type="password"
                 placeholder="Confirm the Password"
                 />
             </div>
           </CardContent>
           <CardFooter>
-            <Button>Register</Button>
+            <Button onClick={handleReg}>Register</Button>
           </CardFooter>
         </Card>
       </TabsContent>
