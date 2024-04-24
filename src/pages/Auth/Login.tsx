@@ -44,12 +44,12 @@ export function Login() {
           </CardHeader>
           <CardContent className="space-y-2">
             <div className="space-y-1">
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="email">Username</Label>
               <Input
               id="gmail"
               value={username}
               onChange={(e) => setusername(e.target.value)}
-              placeholder="Enter Your Gmail"
+              placeholder="Enter Your Username"
               defaultValue="example@gmail.com" />
             </div>
             <div className="space-y-1">
@@ -63,11 +63,7 @@ export function Login() {
             </div>
           </CardContent>
           <CardFooter className="flex justify-between">
-            <div className="flex gap-2 justify-center">
-            </div>
-            <Button>
-                Login
-            </Button>
+            <Button>Login</Button>
           </CardFooter>
         </Card>
       </TabsContent>
@@ -81,19 +77,32 @@ export function Login() {
           </CardHeader>
           <CardContent className="space-y-2">
             <div className="space-y-1">
-              <Label htmlFor="current">Current password</Label>
-              <Input id="current" type="password" />
+              <Label htmlFor="current">Email</Label>
+              <Input 
+              id="current" 
+              type="email"
+              required
+              placeholder="Enter your Email" />
             </div>
             <div className="space-y-1">
-              <Label htmlFor="new">New password</Label>
+              <Label htmlFor="new">Password</Label>
               <Input
                 id="new"
                 type="password"
+                placeholder="Enter the Password"
+                />
+            </div>
+            <div className="space-y-1">
+              <Label htmlFor="new">Confirm Password</Label>
+              <Input
+                id="new"
+                type="password"
+                placeholder="Confirm the Password"
                 />
             </div>
           </CardContent>
           <CardFooter>
-            <Button>Save password</Button>
+            <Button>Register</Button>
           </CardFooter>
         </Card>
       </TabsContent>

@@ -1,9 +1,10 @@
 import { Vortex } from "@/components/ui/vortex";
 import { Review } from "./Review";
 import { Profile } from "./Profile"
-
+import { useNavigate } from "react-router-dom";
 
 export default function Landing_page() {
+  const Navi = useNavigate();
   return (
     <div className="bg-black h-[100%]">
     
@@ -22,7 +23,8 @@ export default function Landing_page() {
           Text with your friends, Enjoy your time with spending time with your Love.
         </p>
         <div className="flex flex-col sm:flex-row items-center gap-4 mt-6">
-          <button className="px-4 py-2 bg-blue-600 hover:bg-blue-700 transition duration-200 rounded-lg text-white shadow-[0px_2px_0px_0px_#FFFFFF40_inset]">
+          <button className="px-4 py-2 bg-blue-600 hover:bg-blue-700 transition duration-200 rounded-lg text-white shadow-[0px_2px_0px_0px_#FFFFFF40_inset]"
+          onClick={() => {Navi("/login")}}>
             Get Started
           </button>
         </div>
