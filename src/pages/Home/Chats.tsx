@@ -1,7 +1,10 @@
+import Users from "./Users"
 
 const Chats = () => {
   return (
-    <div>Chats</div>
+    <div>
+        <Users/>
+    </div>
   )
 }
 
