@@ -19,14 +19,17 @@ import {
 } from "@/components/ui/tabs"
 import { useDispatch } from "react-redux";
 import { fetchUser } from "@/store/Slice/userSlice"
+import { useNavigate } from "react-router-dom"
 export function Login() {
+  const Navi = useNavigate();
   const dispatch = useDispatch();
   const [username, setusername] = useState("");
   const [password, setpassword] = useState("");
   const [confpassword, setconfpassword] = useState("");
   const handleLogin = async () => {
     username && password ?
-    dispatch(fetchUser({username, password, type: "login"}) as any) : null 
+    dispatch(fetchUser({username, password, type: "login"}) as any) : null
+    Navi("/chat")
   }
   const handleReg = async () => {
     username && password ?
