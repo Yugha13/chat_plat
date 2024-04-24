@@ -3,6 +3,8 @@ import axios from "axios";
 
 export const fetchUser = createAsyncThunk("fetchUserToken", async(payload:any) => {
     const { username, password, type } = payload
+    console.log(username, password, type);
+    
     const data:any = axios.post(`http://localhost:5001/api/${type}`, {username, password})
     .then((res:any) => {
         console.log(res);
