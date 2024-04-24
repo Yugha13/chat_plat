@@ -28,7 +28,7 @@ export function Login() {
   const [confpassword, setconfpassword] = useState("");
   const handleLogin = async () => {
     username && password ?
-    dispatch(fetchUser({username, password, type: "login"}) as any) : null
+    await dispatch(fetchUser({username, password, type: "login"}) as any) : null
     Navi("/chat")
   }
   const handleReg = async () => {
