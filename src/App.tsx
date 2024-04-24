@@ -8,8 +8,7 @@ import PrivateRouter from './PrivateRouter';
 
 export default function App() {
   const user = useSelector((item:any) => (item.user));
-  console.log(user);
-  
+  console.log(user)
   return (
     <div>
       <Routes>
