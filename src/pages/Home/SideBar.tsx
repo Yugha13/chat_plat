@@ -6,34 +6,10 @@ const Sidebars = () => {
   return (
 <Sidebar>
   <Menu className="bg-black text-orange-600">
-    <SubMenu label="Charts" className="text-orange-600">
-        <div className="text-orange-400">
-            <div className="flex p-3 ">
-                <Avatar>
-                    <AvatarImage src="https://github.com/shadcn.png" />
-                </Avatar>
-                    <MenuItem> Ashwin </MenuItem>
-            </div>
-            <div className="flex p-3">
-                <Avatar>
-                    <AvatarImage src="https://github.com/shadcn.png" />
-                </Avatar>
-                    <MenuItem> Yugha </MenuItem>
-            </div>
-            <div className="flex p-3 ">
-                <Avatar>
-                    <AvatarImage src="https://github.com/shadcn.png" />
-                </Avatar>
-                    <MenuItem> Ranjith </MenuItem>
-            </div>
-            <div className="flex p-3 ">
-                <Avatar>
-                    <AvatarImage src="https://github.com/shadcn.png" />
-                </Avatar>
-                    <MenuItem> Arif </MenuItem>
-            </div>
-        </div>
-    </SubMenu>
+    <MenuItem className="bg-red-900 text-white">My Account</MenuItem>
+    <MenuItem>Ashwin</MenuItem>
+    <MenuItem>Yugha</MenuItem>
+    <MenuItem>Ranjith</MenuItem>
   </Menu>
   </Sidebar>
   )
