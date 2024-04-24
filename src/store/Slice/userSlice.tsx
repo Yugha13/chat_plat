@@ -5,7 +5,7 @@ export const fetchUser = createAsyncThunk("fetchUserToken", async(payload:any) =
     const { username, password, type } = payload
     console.log(username, password, type);
     
-    const data:any = axios.post(`http://localhost:5001/api/${type}`, {username, password})
+    const data:any = axios.post(`http://192.168.179.238:5001/api/${type}`, {username, password})
     .then((res:any) => {
         console.log(res);
         localStorage.setItem("token", res.data.token)
