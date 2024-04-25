@@ -1,7 +1,13 @@
+import { Outlet } from "react-router-dom"
 import Sidebars from "./SideBar"
 const Users = () => {
   return (
-    <Sidebars/>
+    <div className="flex">
+      <div className="">
+        <Sidebars/>
+      </div>
+      <Outlet/>
+    </div>
   )
 }
 

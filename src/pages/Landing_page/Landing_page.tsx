@@ -2,8 +2,31 @@ import { Vortex } from "@/components/ui/vortex";
 import { Review } from "./Review";
 import { Profile } from "./Profile"
 import { useNavigate } from "react-router-dom";
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+import { Signinbtn } from "./Signinbtn";
+import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 
-export default function Landing_page() {
+
+
+const words = `Connect with others, anywhere, anytime, Chat your way to new connections, Express yourself, connect with others, Bringing people together, one chat at a time, Join the conversation, be part of the community, and Chat, share, and discover new things.
+`;
+
+const letter = [
+  {
+    text: "Text with your friends, ",
+  },
+  {
+    text: "Enjoy your time  ",
+  },
+  
+  {
+    text: "with your Love.",
+    className: "text-blue-500 dark:text-blue-500",
+  },
+];
+
+  
+export default function Landing_page(){
   const Navi = useNavigate();
   return (
     <div className="bg-black h-[100%]">
@@ -20,18 +43,15 @@ export default function Landing_page() {
           CHAT PLAT
         </h2>
         <p className="text-white text-sm md:text-2xl max-w-xl mt-6 text-center">
-          Text with your friends, Enjoy your time with spending time with your Love.
+          <TypewriterEffectSmooth words = {letter}/>
         </p>
-        <div className="flex flex-col sm:flex-row items-center gap-4 mt-6">
-          <button className="px-4 py-2 bg-blue-600 hover:bg-blue-700 transition duration-200 rounded-lg text-white shadow-[0px_2px_0px_0px_#FFFFFF40_inset]"
-          onClick={() => {Navi("/login")}}>
-            Get Started
-          </button>
-        </div>
+          <Signinbtn/>
+        
       </Vortex>
     </div>
-    <div className="mt-10">
+    <div className="m-20 text-center">
     <Profile/>
+        <TextGenerateEffect words={words} />
     </div>
     <Review/>
     </div>

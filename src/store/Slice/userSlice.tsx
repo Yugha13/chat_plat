@@ -19,6 +19,7 @@ const inti = {
     isloggedIn: false,
     isloading: false,
     error: "",
+    curFrd: ""
 }
 
 const slice:any = {
@@ -30,6 +31,10 @@ const slice:any = {
             state.isloggedIn = false;
             state.isloading = false;
             
+        },
+        setFrd: (state:any, action:any) => {
+            console.log(action);
+            state.curFrd = action.payload.username
         }
     },
     extraReducers: (builder:any) => {
@@ -53,7 +58,7 @@ const slice:any = {
 
 
 const useSlice:any = createSlice(slice) 
-export const { logout } = useSlice.actions
+export const { logout, setFrd } = useSlice.actions
 export default useSlice.reducer
 
 /* 
